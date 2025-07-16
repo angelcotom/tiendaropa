@@ -1,6 +1,9 @@
 almacen = {}
 ropa = int(input("Ingrese cuántas prendas desea ingresar: "))
 
+# Contador de categoría
+categorias_contador = {"Mujer": 0, "Hombre": 0, "Niño": 0}
+
 for i in range(ropa):
     print(f"\nPrenda {i+1}")
     codigo = input("Ingrese código: ")
@@ -9,7 +12,14 @@ for i in range(ropa):
         codigo =input("Ingrese codigo de la prenda ")
 
     nombre = input("Ingrese nombre de la prenda: ")
-    categoria = input("Ingrese categoría: ")
+
+    categoria = input("Ingrese categoría (Mujer, Hombre, Niño): ").capitalize()
+    categorias_contador[categoria] += 1
+    while categoria not in categorias_contador:
+        print(" Categoría inválida. Debe ser Mujer, Hombre o Niño.")
+        categoria = input("Ingrese categoría (Mujer, Hombre, Niño): ").capitalize()
+
+
     talla = input("Ingrese talla: ")
 
     precio_U = float(input("Ingrese precio U = Q "))
@@ -65,5 +75,7 @@ elif confirmacion == "N":
 else:
     print("Opción no válida. Escriba 'S' o 'N'.")
 
-
-
+# Mostrar cuántas prendas hay por categoría
+print("\n Prendas por Categoría:")
+for cat, cantidad in categorias_contador.items():
+    print(f"{cat}: {cantidad} prendas")
