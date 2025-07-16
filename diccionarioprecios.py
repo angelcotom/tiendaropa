@@ -20,7 +20,7 @@ for i in range(ropa):
         categoria = input("Ingrese categoría (Mujer, Hombre, Niño): ").capitalize()
 
 
-    talla = input("Ingrese talla: ")
+    talla = input("Ingrese talla (S, M, L, XL): ")
 
     precio_U = float(input("Ingrese precio U = Q "))
     while precio_U <= 0:
