@@ -49,3 +49,21 @@ if buscar in almacen:
     print(f"Talla: {almacen[buscar]['talla']}")
 else:
     print("Producto no existe.")
+#mostrar valor de el invventario
+print("\n¿Desea calcular el valor total del inventario?")
+confirmacion = input("Sí o no (S/N): ").strip().upper()
+
+
+if confirmacion == "S":
+    total = 0
+    for prenda in almacen.values():
+        total += prenda["precio_U"] * int(prenda["cantidadStok"])
+    print(f"\n Valor total del inventario: Q{total:.2f}")
+
+elif confirmacion == "N":
+    print(" No se calculará el valor del inventario.")
+else:
+    print("Opción no válida. Escriba 'S' o 'N'.")
+
+
+
